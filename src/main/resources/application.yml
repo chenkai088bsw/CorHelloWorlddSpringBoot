@@ -1,0 +1,39 @@
+spring:
+  jpa:
+    hibernate:
+      #定义数据表的生成策略，更新或者创建数据表(如果没有数据表就创建，有数据表就更新表结构)
+      ddl-auto: update
+      #控制台显示sql
+    show-sql: true
+
+
+
+#server:
+#  port: 8081
+#spring:
+#  profiles:
+#    active: dev
+#---
+#server:
+#  port: 8083
+#spring:
+#  profiles: dev
+#---
+#server:
+#  port: 8084
+#spring:
+#  profiles: prod
+
+
+#person:
+#  lastName: zhangsan
+#  age: 18
+#  boss: true
+#  birth: 2017/1/2
+#  maps: {k1: v1,k2: v2}
+#  lists:
+#    - lisi
+#    - zhaoliu
+#  dog:
+#    name: 小狗
+#    age: 2

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.Mybatis.Mapper.ApplyInfoMapper">
+
+    <!--bychenkai-->
+    <select id="getApplyCodeByPaymentPlayCode" resultType="java.lang.String">
+        select i.code
+        from rt_apply_info i
+        <where>
+            <choose>
+                <when test="codes != null and codes.size > 0">
+                    i.payment_plan_code in
+                    <foreach collection="codes" separator="," open="(" close=")" item="code">
+                        #{code}
+                    </foreach>
+                    <if test="statusList != null and statusList.size > 0">
+                        and i.status in
+                        <foreach collection="statusList" separator=","  item="status" open="(" close=")">
+                            #{status}
+                        </foreach>
+                    </if>
+                    and is_delete = 0
+                </when>
+                <otherwise>
+                    1=0
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+</mapper>

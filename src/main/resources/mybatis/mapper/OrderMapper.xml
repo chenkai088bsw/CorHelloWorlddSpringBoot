@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace要跟接口绑定-->
+<mapper namespace="com.atguigu.Mybatis.Mapper.OrdersMapper">
+    <select id="getOrderById" resultType="com.atguigu.Mybatis.Bean.Order">
+        select * from orders where id=#{id}
+    </select>
+
+    <insert id="insertOrder">
+        INSERT into orders(user_id,number,createtime,note) VALUES (#{user_id},#{number},#{createtime},#{note})
+    </insert>
+</mapper>
