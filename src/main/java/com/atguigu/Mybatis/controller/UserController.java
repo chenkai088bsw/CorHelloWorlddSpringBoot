@@ -58,7 +58,7 @@ public class UserController {
 //            applyStatusList.add(1);
 //        return applyInfoMapper.getApplyCodeByPaymentPlayCode(paymentPlanCodes, applyStatusList);
 //    }
-
+    //使用postman测试
     @RequestMapping(value = "/getApplyCodeByPaymentPlayCode")
     public List<String> getApplyCodeByPaymentPlayCode(@RequestParam(value = "paymentPlanCodes",required = false) List<String> paymentPlanCodes,
                                                       @RequestParam(value = "applyStatusList",required = false) List<Integer> applyStatusList){
